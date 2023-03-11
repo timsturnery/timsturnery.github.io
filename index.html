@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>Tim Kennedy - Woodturner</title>
+<link href="timsturnery.css" rel="stylesheet" type="text/css" media="screen">
+<script type="text/javascript" src="script/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="script/jquery.galleria.js"></script>
+<script type="text/javascript"> 
+jQuery(function($) { $('ul.gallery').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				if(! ($.browser.mozilla && navigator.appVersion.indexOf("Win")!=-1) ) { // FF/Win fades large images terribly slow
+					image.css('display','none').fadeIn(1000);
+				}
+				caption.css('display','none').fadeIn(500);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.3);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	}); 
+</script>
+</head>
+
+<body>
+<div id="divMain">
+	<h1 class="txtItalic" align="center">Tim Kennedy &nbsp &nbsp &nbsp &nbsp<span class="txt txtBold txtItalic">Woodturning and other hand crafted items</span></h1>
+	<div class="menuBar clear" >
+		<div class="menuField borderTop" align="center"><a class="menuItem" href="index.html">Home</a></div>
+		<div class="menuField borderTop" align="center"><a class="menuItem" href="artist.html">Artist</a></div>
+<!--		<div class="menuField borderTop" align="center"><a class="menuItem" href="events.html">Events</a></div> -->
+		<div class="menuField borderTop" align="center"><a class="menuItem" href="howto.html">How to</a></div>
+		<div class="menuField borderTop" align="center">
+			<a class="menuItem" href="https://www.etsy.com/shop/timsturnery">Order Online</a></div>
+		<div class="menuField borderTop" align="center"><a class="menuItem" href="contact.html">Contact</a></div>
+	</div>
+<div class="slideshow clear" style="width:100%" align="center">
+	<div id="main_image"></div>
+<!--	<div class="txt" align="center"><a href="#" onclick="$.galleria.prev(); return false;">&laquo; previous</a> | <a href="#" onclick="$.galleria.next(); return false;">next &raquo;</a></div> -->
+	<ul class="gallery"> 
+		<li class="active"><a href="images/slidesSmall/slide20.jpg" title="Natural Edge Maple Bowl">
+			<img src="images/slidesThumb/slide20.jpg" alt="slide20"></a></li> 
+		<li><a href="images/slidesSmall/slide2.jpg" title="Natural Edge Cherry Bowl, 3.75 inches tall, 7.5 inches wide">
+			<img src="images/slidesThumb/slide2.jpg" alt="slide2"></a></li>
+		<li><a href="images/slidesSmall/slide3.jpg" title="Cooking Spatulas">
+			<img src="images/slidesThumb/slide3.jpg" alt="slide3"></a></li> 
+		<li><a href="images/slidesSmall/slide28.jpg" title="Wall Art, Cherry on Barn Wood">
+			<img src="images/slidesThumb/slide28.jpg" alt="slide28"></a></li> 
+		<li><a href="images/slidesSmall/slide29.jpg" title="Wall Art, Burnt Columns">
+			<img src="images/slidesThumb/slide29.jpg" alt="slide29"></a></li> 
+		<li><a href="images/slidesSmall/slide23.jpg" title="Christmas Ornament, Cherry Burl and Hawthorn">
+			<img src="images/slidesThumb/slide23.jpg" alt="slide23"></a></li> 
+		<li><a href="images/slidesSmall/slide7.jpg" title="Three Legged Bowl, Ash">
+			<img src="images/slidesThumb/slide7.jpg" alt="slide7"></a></li> 
+		<li><a href="images/slidesSmall/slide10.jpg" title="Stack of Saucers">
+			<img src="images/slidesThumb/slide10.jpg" alt="slide10"></a></li> 
+		<li><a href="images/slidesSmall/slide13.jpg" title="Natural Edge Square Bowl, Black Cherry">
+			<img src="images/slidesThumb/slide13.jpg" alt="slide13"></a></li> 
+		<li><a href="images/slidesSmall/slide14.jpg" title="Hollow Vessel, Black Walnut">
+			<img src="images/slidesThumb/slide14.jpg" alt="slide14"></a></li> 
+		<li><a href="images/slidesSmall/slide15.jpg" title="Hollow Vessel, Black Walnut">
+			<img src="images/slidesThumb/slide15.jpg" alt="slide15"></a></li> 
+		<li><a href="images/slidesSmall/slide24.jpg" title="Aspire, Driftwood with Ash Spheres">
+			<img src="images/slidesThumb/slide24.jpg" alt="slide24"></a></li> 
+		<li><a href="images/slidesSmall/slide17.jpg" title="Collection of Square Bowls with Spheres, Oak and Walnut">
+			<img src="images/slidesThumb/slide17.jpg" alt="slide17"></a></li> 
+		<li><a href="images/slidesSmall/slide18.jpg" title="Hollow Vessel, Ash and Walnut.  Finial and base are threaded at 16 tpi.">
+			<img src="images/slidesThumb/slide18.jpg" alt="slide18"></a></li> 
+		<li><a href="images/slidesSmall/slide19.jpg" title="Figured Maple Platter,14 inches diameter">
+			<img src="images/slidesThumb/slide19.jpg" alt="slide19"></a></li>
+		<li><a href="images/slidesSmall/slide26.jpg" title="Gnarly Wood with Sphere,17 inches long, 4 inch sphere">
+			<img src="images/slidesThumb/slide26.jpg" alt="slide26"></a></li>
+		<li><a href="images/slidesSmall/slide27.jpg" title="Driftwood with Sphere,27 inches tall">
+			<img src="images/slidesThumb/slide27.jpg" alt="slide27"></a></li>
+
+	</ul>
+</div>
+
+<p align="center" style="font-size: 10px">ALL CONTENT ON THIS SITE IS OWNED BY Tim Kennedy.<br>No unautherized use of this content is permitted.</p>
+</div>
+</body>
+
+</html>
